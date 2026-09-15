@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ถึงแบม ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow:hidden;display:flex;justify-content:center;align-items:center;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(135deg,#ff6f91,#ff9a9e,#c084fc);color:white}
+.card{width:min(90%,430px);padding:40px 28px;text-align:center;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:30px;backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(80,0,50,.25);animation:pop .8s ease}
+.heart{font-size:76px;animation:beat 1.2s infinite}
+h1{font-size:34px;margin:8px 0 20px}
+p{font-size:18px;line-height:1.9;margin:7px 0}
+.love{font-size:30px;font-weight:800;margin-top:22px}
+button{margin-top:25px;border:0;border-radius:999px;padding:14px 26px;font-size:17px;font-weight:700;color:#e91e63;background:white;box-shadow:0 8px 25px rgba(0,0,0,.18)}
+.heart-float{position:absolute;bottom:-30px;font-size:22px;animation:float 7s linear infinite;opacity:.8}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes beat{50%{transform:scale(1.18)}}
+@keyframes float{to{transform:translateY(-115vh) rotate(20deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="heart">❤️</div>
+<h1>ถึงแบม คนที่เค้ารัก</h1>
+<p>แบมรู้ไหมว่า...</p>
+<p>ตั้งแต่มีแบมเข้ามาในชีวิต<br>ทุกวันของเค้าก็มีความหมายมากขึ้น</p>
+<p>ขอบคุณที่อยู่ข้าง ๆ กันนะ<br>เค้าอาจไม่ได้พูดเก่ง แต่เค้ารักแบมมากจริง ๆ</p>
+<div class="love">รักแบมนะ ❤️</div>
+<button onclick="love()">กดตรงนี้สิ 💕</button>
+</div>
+<script>
+function love(){
+ alert("แบม ❤️\nเค้ารักแบมมากนะ\nอยากมีแบมอยู่ข้าง ๆ กันไปนาน ๆ เลย 💕");
+}
+for(let i=0;i<20;i++){
+ const h=document.createElement("div");
+ h.className="heart-float";
+ h.textContent=["❤️","💕","💗","💖","💘"][Math.floor(Math.random()*5)];
+ h.style.left=Math.random()*100+"%";
+ h.style.animationDelay=Math.random()*6+"s";
+ h.style.animationDuration=(5+Math.random()*5)+"s";
+ document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
